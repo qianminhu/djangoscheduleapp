@@ -1,0 +1,10 @@
+{% if latest_task_list %}
+    <head>Today is {% now "SHORT_DATETIME_FORMAT" %}</head>
+    <ul>
+    {% for currentTask in latest_task_list %}
+        <li><a href="/tasks/{{ currentTask.id }}/">{{ currentTask.task }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No tasks are available.</p>
+{% endif %}
